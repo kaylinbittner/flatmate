@@ -80,6 +80,7 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    flex-slider-rails (2.7.0)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
     globalid (0.4.1)
@@ -91,6 +92,9 @@ GEM
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -201,6 +205,9 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    turbolinks (5.2.0)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.20)
@@ -234,8 +241,10 @@ DEPENDENCIES
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails
+  flex-slider-rails
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
+  jquery-turbolinks
   listen (~> 3.0.5)
   pg (~> 0.21)
   pry-byebug
