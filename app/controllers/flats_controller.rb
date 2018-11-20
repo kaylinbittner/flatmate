@@ -5,6 +5,14 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
+  def index
+    @flats = if params[:city]
+      Flat.where('city LIKE ?', "%#{params[:city]}%")
+    else
+      Flat.all
+    end
+  end
+
   def show
   end
 
