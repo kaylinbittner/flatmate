@@ -13,28 +13,24 @@ puts 'Creating flats...'
 flats_attributes = [
   {
     key_description: 'Small Attic Appartment',
+    price: '€ 80',
     city: 'Berlin, Kreuzberg',
-    average_rating: 4
+    street: 'Kommandantenstrasse 79',
+    zipcode: '10117',
+    average_rating: 4,
+    description: 'This is a placeholer description. I really regret making this description be a minimum of 150 characters. I think I have hit that minimum, but I am not sure. Death to Fritz.',
+    user_id: 1
   },
   {
-    key_description: 'Small Attic Appartment',
+    key_description: 'Charming City Suite',
+    price: '€ 120',
     city: 'Berlin, Mitte',
-    average_rating: 3
-  },
-  {
-    key_description: 'Small Attic Appartment',
-    city: 'Berlin, Moabit',
-    average_rating: 5
-  },
-  {
-    key_description: 'Small Attic Appartment',
-    city: 'Berlin, Friedrichshain',
-    average_rating: 2
-  },
-  {
-    key_description: 'Small Attic Appartment',
-    city: 'Berlin, Prenzlauer Berg',
-    average_rating: 4
+    street: 'Kommandantenstrasse 79',
+    zipcode: '10117',
+    average_rating: 3,
+    description: 'This is a placeholer description. I really regret making this description be a minimum of 150 characters. I think I have hit that minimum, but I am not sure. Death to Fritz.',
+    user_id: 2
   }
+]
 Flat.create!(flats_attributes)
 puts 'Finished!'

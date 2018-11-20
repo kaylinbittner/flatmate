@@ -1,10 +1,12 @@
 class FlatsController < ApplicationController
+  before_action :set_flat, only: [:show, :edit, :update, :destroy]
+
   def home
     @flats = Flat.all
   end
 
   def show
-    @flat = Flat.find(params(:id))
+    @flat = Flat.find(params[:id])
   end
 
   def new
@@ -17,14 +19,20 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     @flat.user = current_user
+<<<<<<< HEAD
 
     if @flat.save
       redirect_to @flat, notice: 'Your flat was successfully created.'
+=======
+    if @flat.save!
+      redirect_to @flat
+>>>>>>> 629e631d084e1f037df0a61bf7d1d416cacae8ae
     else
       render :new
     end
   end
 
+<<<<<<< HEAD
 
 # <<<<<<< HEAD
 #   def create
@@ -62,5 +70,10 @@ def flat_params
   params.require(:flat).permit(:key_description, :description, :price, :city, :zipcode, :street, :country, :average_rating, :wifi, :dishwasher, :allows_pets, :kitchen, :guests, :handicap, :balcony, :smoking, :tv, :availability, {pictures: []})
 end
 
+=======
+  private
+  def flat_params
+    params.require(:flat).permit(:description, :price, :city, :zipcode, :street, :country, :average_rating, :wifi, :dishwasher, :allows_pets, :kitchen, :guests, :handicap, :balcony, :smoking, :tv, :availability, {pictures: []})
+  end
+>>>>>>> 629e631d084e1f037df0a61bf7d1d416cacae8ae
 end
-
