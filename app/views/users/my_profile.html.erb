@@ -1,0 +1,31 @@
+
+<div class="profile-header-wrapper">
+
+
+    <div class="profile-header-infos">
+      <img src="#" alt="" class="avatar">
+      <h1>Welcome home, <%= @user.first_name %>
+      </div>
+
+        <div class="tabs">
+          <a class="tab active" href="#">
+            <h3>Profile</h3>
+          </a>
+          <a class="tab" href="#">
+            <h3>Booked flats</h3>
+          </a>
+          <a class="tab" href="#">
+            <h3>Hosted flats</h3>
+          </a>
+        </div>
+
+    </div>
+    <div class="content">
+      <ul>
+        <li><%= @user.first_name %></li>
+        <li><%= @user.last_name %></li>
+        <li><%= @user.email %></li>
+      </ul>
+      <div class="btn btn-primary"><%= link_to "Become a host" %></div>
+    </div>
+
