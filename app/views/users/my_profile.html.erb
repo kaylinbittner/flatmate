@@ -1,31 +1,66 @@
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <div class="profile-header-wrapper">
-
-
-    <div class="profile-header-infos">
-      <img src="#" alt="" class="avatar">
-      <h1>Welcome home, <%= @user.first_name %>
-      </div>
-
-        <div class="tabs">
-          <a class="tab active" href="#">
-            <h3>Profile</h3>
-          </a>
-          <a class="tab" href="#">
-            <h3>Booked flats</h3>
-          </a>
-          <a class="tab" href="#">
-            <h3>Hosted flats</h3>
-          </a>
+  <div class="profile-header-infos">
+    <img src="#" alt="" class="avatar">
+    <h1>Welcome home, <%= @user.first_name %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tabbable-panel">
+          <div class="tabbable-line">
+            <ul class="nav nav-tabs ">
+              <li class="active">
+                <a href="#tab_profile" data-toggle="tab">
+                Profile </a>
+              </li>
+              <li>
+                <a href="#tab_bookings" data-toggle="tab">
+                Bookings</a>
+              </li>
+              <li>
+                <a href="#tab_flats" data-toggle="tab">
+                Host </a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_profile">
+                <ul>
+                  <li>First name:<%= @user.first_name %></li>
+                  <li>Last name:<%= @user.last_name %></li>
+                  <li>Email:<%= @user.email %></li>
+                  <li>Phone:<%= @user.phone %></li>
+                </ul>
+                <p>
+                  <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-secondary" %>
+                </p>
+              </div>
+              <div class="tab-pane" id="tab_bookings">
+                <p>
+                  <%= @user.bookings %>
+                </p>
+                <p>
+                  <%= link_to "Create review", my_profile_path, class: "btn btn-secondary" %>
+                </p>
+              </div>
+              <div class="tab-pane" id="tab_flats">
+                <p>
+                  <%= @user_flats %>
+                </p>
+                <p>
+                  <%= link_to "Become a host", new_flat_path, class: "btn btn-secondary" %>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-    </div>
-    <div class="content">
-      <ul>
-        <li><%= @user.first_name %></li>
-        <li><%= @user.last_name %></li>
-        <li><%= @user.email %></li>
-      </ul>
-      <div class="btn btn-primary"><%= link_to "Become a host" %></div>
-    </div>
+
+
+
 
