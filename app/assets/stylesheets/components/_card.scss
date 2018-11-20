@@ -1,13 +1,15 @@
 .card {
-  height: 175px;
+  height: 300px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
   color: white;
   position: relative;
   margin-top: 20px;
+  margin-bottom: 20px;
   font-weight: bolder;
-  background-image: asset-url('sample.jpg');
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  text-decoration: none;
+  box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.4);
 }
 .card-city {
   font-family: Helvetica;
@@ -18,24 +20,43 @@
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bolder;
+  opacity: 0.8;
 }
-.card-city{
-
+.card-city:hover {
+  opacity: 1;
+}
+strong {
+  color: gray;
+  font-weight: lighter !important;
+}
+.text-dec{
+  text-decoration: none !important;
+}
+.flat-image {
+  img {
+    width: 100%;
+  }
+}
+.card-description{
+  padding-left: 10px;
+  margin-top: 5px;
+  color: #ff5b5e;
+  text-shadow: none;
+  font-family: Helvetica;
+  font-weight: lighter;
+  font-size: 15px;
+  opacity: 0.8;
+}
+.card-description:hover{
+  opacity: 1;
+}
+.card-rating:hover {
+  opacity: 1;
 }
 .card-rating {
-
-}
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-  color: white !important;
-}
-.card-link:hover {
-  opacity: 0.1;
+  margin-top: 5px;
+  font-size: 15px;
+  padding-left: 10px;
+  text-shadow: none;
+  opacity: 0.8;
 }
