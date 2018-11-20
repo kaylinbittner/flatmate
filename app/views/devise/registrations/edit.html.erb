@@ -36,7 +36,7 @@
 </div>
 
 <div class="form-actions">
-  <%= f.button :submit, "Update" %>
+  <%= f.button :submit, "Update", class: "btn btn-success" %>
 </div>
 <% end %>
 
@@ -44,4 +44,4 @@
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", my_profile_path %>
+<%= link_to "Back", my_profile_path, class: "btn btn-secondary" %>

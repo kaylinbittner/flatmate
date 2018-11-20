@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root to: "flats#home"
   devise_for :users, :controllers => { registrations: 'registrations' }
   get :my_profile, to: "users#my_profile"
-  get :edit, to: "users#edit"
   resources :flats do
     resources :bookings, only: [:new, :show, :create, :destroy]
   end
