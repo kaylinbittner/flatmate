@@ -1,20 +1,5 @@
-<<<<<<< HEAD
-<%= simple_form_for (@flat) do |f| %>
- <%= f.error_notification %>
-<%= f.input :key_description %>
-<%= f.input :description %>
-<%= f.input :city %>
-<%= f.input :street %>
-<%= f.input :zipcode %>
-<%= f.input :price %>
-<%= f.input :guests %>
-<%= f.label :pictures %>
-<%= f.check_box :description %>
 
-
-
-=======
-<%= simple_form_for @flat do |f| %>
+<%= simple_form_for flat do |f| %>
 
   <%= f.input :description %>
   <%= f.input :city %>
@@ -39,5 +24,4 @@
   <%= f.label :tv %>
   <%= f.check_box :tv %>
   <%= f.submit "Submit" %>
->>>>>>> 629e631d084e1f037df0a61bf7d1d416cacae8ae
 <% end %>
