@@ -1,15 +1,15 @@
-<%= simple_form_for(@flat), html: { multipart: true } do |f| %>
+<%= simple_form_for (@flat) do |f| %>
+ <%= f.error_notification %>
+<%= f.input :key_description %>
 <%= f.input :description %>
 <%= f.input :city %>
+<%= f.input :street %>
+<%= f.input :zipcode %>
 <%= f.input :price %>
-<%= f.input :number_of_guests %>
+<%= f.input :guests %>
 <%= f.label :pictures %>
-<%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
-<%= f.submit %>
-<% end %>
+<%= f.check_box :description %>
 
 
-<%= f.check_box :wifi, :dishwasher, :pets_allowed, :kitchen, :smocking_allowed, :balcony, :tv %>
 
-<%= f.submit "Submit" %>
 <% end %>
