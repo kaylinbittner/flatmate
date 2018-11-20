@@ -1,15 +1,24 @@
-<%= simple_form_for(@flat), html: { multipart: true } do |f| %>
-<%= f.input :description %>
-<%= f.input :city %>
-<%= f.input :price %>
-<%= f.input :number_of_guests %>
-<%= f.label :pictures %>
-<%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
-<%= f.submit %>
-<% end %>
-
-
-<%= f.check_box :wifi, :dishwasher, :pets_allowed, :kitchen, :smocking_allowed, :balcony, :tv %>
-
-<%= f.submit "Submit" %>
+<%= simple_form_for @flat, html: { multipart: true } do |f| %>
+  <%= f.input :description %>
+  <%= f.input :city %>
+  <%= f.input :zipcode %>
+  <%= f.input :price %>
+  <%= f.input :guests %>
+  <%= f.label :pictures %>
+  <%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
+  <%= f.label :wifi %>
+  <%= f.check_box :wifi %>
+  <%= f.label :dishwasher %>
+  <%= f.check_box :dishwasher %>
+  <%= f.label :allows_pets %>
+  <%= f.check_box :allows_pets %>
+  <%= f.label :kitchen %>
+  <%= f.check_box :kitchen %>
+  <%= f.label :smoking %>
+  <%= f.check_box :smoking %>
+  <%= f.label :balcony %>
+  <%= f.check_box :balcony %>
+  <%= f.label :tv %>
+  <%= f.check_box :tv %>
+  <%= f.submit "Submit" %>
 <% end %>
