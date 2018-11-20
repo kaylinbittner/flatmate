@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'flats#home'
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :users, only: [:show]
+  root to: "flats#home"
   resources :flats do
     resources :bookings, only: [:new, :show, :create, :destroy]
   end
