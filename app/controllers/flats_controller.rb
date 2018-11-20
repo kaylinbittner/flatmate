@@ -6,7 +6,7 @@ class FlatsController < ApplicationController
   end
 
   def show
-    @flat = Flat.find(params(:id))
+    @flat = Flat.find(params[:id])
   end
 
   def new
@@ -15,7 +15,8 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
-    if @flat.save
+    @flat.user = current_user
+    if @flat.save!
       redirect_to @flat
     else
       render :new
@@ -24,8 +25,6 @@ class FlatsController < ApplicationController
 
   private
   def flat_params
-    params.require(:flat).permit(:key_description, :description, :price, :city, :zipcode, :street, :country, :average_rating, :wifi, :dishwasher, :allows_pets, :kitchen, :guests, :handicap, :balcony, :smoking, :tv, :availability, {pictures: []})
+    params.require(:flat).permit(:description, :price, :city, :zipcode, :street, :country, :average_rating, :wifi, :dishwasher, :allows_pets, :kitchen, :guests, :handicap, :balcony, :smoking, :tv, :availability, {pictures: []})
   end
-
 end
-
