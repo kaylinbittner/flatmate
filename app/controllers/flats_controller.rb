@@ -32,6 +32,13 @@ class FlatsController < ApplicationController
 
   private
 
+# <<<<<<< HEAD
+# =======
+#   def set_flat
+#     @flat = Flat.find(params[:id])
+#   end
+
+# >>>>>>> 4a7a3013187c4f535c1cbe7c737d738d1b724817
   def flat_params
     params.require(:flat).permit(:key_description, :description, :price, :city, :zipcode, :street, :country, :average_rating, :wifi, :dishwasher, :allows_pets, :kitchen, :guests, :handicap, :balcony, :smoking, :tv, :availability, {pictures: []})
   end
