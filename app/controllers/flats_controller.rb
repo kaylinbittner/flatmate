@@ -1,12 +1,12 @@
 class FlatsController < ApplicationController
   def home
-
+    @flats = Flat.all
   end
 
   def show
     @flat = Flat.find(params(:id))
   end
-
+  
   def new
     @flat = Flat.new
   end
@@ -18,7 +18,6 @@ class FlatsController < ApplicationController
     else
       render :new
     end
-  end
 
   private
 
