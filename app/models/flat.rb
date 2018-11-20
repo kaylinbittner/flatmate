@@ -4,5 +4,5 @@ class Flat < ApplicationRecord
   validates :description, :price, :city, :zipcode, :street, :country, presence: true
   validates :key_description, length: { in: 3..35 }
   validates :description, length: { minimum: 150 }
-  mount_uploaders :pictures, PictureUploader
+  # mount_uploaders :pictures, PictureUploader
 end

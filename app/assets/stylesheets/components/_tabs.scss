@@ -1,0 +1,41 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  min-height: 50px;
+}
+
+.tabs a {
+  color: white;
+  text-align: center;
+
+}
+
+.tab {
+  padding:0px 60px;
+  background-color: #756A66;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.tab:hover {
+  opacity: 0.6;
+}
+
+.tab.active {
+  background-color: white;
+  color: black;
+}
+
+.tab.active:hover {
+  opacity: 0.5;
+}
+
+.tab:first-child {
+  border-radius: 10px 0 0 0; /* clockwise starting top-left*/
+}
+
+.tab:last-child {
+  border-radius: 0 10px 0 0; /* clockwise starting top-left*/
+}
+
+
