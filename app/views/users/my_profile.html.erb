@@ -28,10 +28,10 @@
             <div class="tab-content">
               <div class="tab-pane active" id="tab_profile">
                 <ul>
-                  <li><%= @user.first_name %></li>
-                  <li><%= @user.last_name %></li>
-                  <li><%= @user.email %></li>
-                  <li><%= @user.phone %></li>
+                  <li>First name:<%= @user.first_name %></li>
+                  <li>Last name:<%= @user.last_name %></li>
+                  <li>Email:<%= @user.email %></li>
+                  <li>Phone:<%= @user.phone %></li>
                 </ul>
                 <p>
                   <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-secondary" %>
