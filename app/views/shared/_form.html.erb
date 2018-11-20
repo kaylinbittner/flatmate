@@ -1,11 +1,13 @@
-<%= simple_form_for @flat, html: { multipart: true } do |f| %>
+<%= simple_form_for @flat do |f| %>
+
   <%= f.input :description %>
   <%= f.input :city %>
+  <%= f.input :street %>
   <%= f.input :zipcode %>
   <%= f.input :price %>
   <%= f.input :guests %>
   <%= f.label :pictures %>
-  <%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
+  <%= f.file_field :pictures, multiple: true %>
   <%= f.label :wifi %>
   <%= f.check_box :wifi %>
   <%= f.label :dishwasher %>
