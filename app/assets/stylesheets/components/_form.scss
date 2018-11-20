@@ -1,19 +1,13 @@
 form{
     width: 60%;
     padding: 0px;
-    margin: 10px 4;
+    margin: 40px 0 ;
     box-sizing: border-box;
     font-family: Helvetica;
     text-decoration: none;
     color: #FD7A7A;
 }
 
-form-copyright {
-  color: #FF5B5E;
-  text-decoration: none;
-  font-size: 15px;
-  padding: 0px;
-  font-family: Helvetica;
-  font-weight: lighter;
-  opacity: 0.6;
+.button:hover {
+    background-color: green;
 }
