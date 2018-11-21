@@ -10,10 +10,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @flats = Flat.all
     @review = Review.new(review_params)
     @review.booking = Booking.find(params[:booking_id])
+    redirect_id = @review.booking.flat.id
     if @review.save
-      redirect_to flat_path(params[:flat_id])
+      redirect_to flat_path(redirect_id)
     else
       render :new
     end

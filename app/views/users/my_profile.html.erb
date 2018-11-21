@@ -2,8 +2,6 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <div class="profile-header-wrapper">
   <div class="profile-header-infos">
-    <img src="#" alt="" class="avatar">
-    <img src="avatar.png" alt="Avatar" class="avatar">
     <h1>Welcome home, <%= @user.first_name %>
     </div>
   </div>
@@ -56,10 +54,9 @@
                     </div>
                     <div class="booking-status">
                       <div class="status coming">Coming up</div>
-                      <div class="price"><%= @flats.find(b.flat_id).price %></div>
                     </div>
                     <div class="booking-review">
-                      <%= link_to "Create review", my_profile_path(b.id), class: "btn btn-secondary" %>
+                      <%= link_to "Create review", new_booking_review_path(b.id), class: "btn btn-secondary" %>
                     </div>
                   </li>
                   <% end %>

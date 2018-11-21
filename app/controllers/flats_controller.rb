@@ -8,13 +8,11 @@ class FlatsController < ApplicationController
 
   def index
     @flats = if params[:city]
-      Flat.where('city LIKE ?', "%#{params[:city]}%")
-    else
-      Flat.all
-    end
-
-    # flats = Flat.where.not(latitude: nil, longitude: nil)
-
+       Flat.where('city LIKE ?', "%#{params[:city]}%")
+     else
+       Flat.all
+     end
+    #flats = Flat.where.not(latitude: nil, longitude: nil)
     @markers = @flats.map do |flat|
       {
         lng: flat.longitude,
@@ -25,6 +23,17 @@ class FlatsController < ApplicationController
 
   def show
     @booking = Booking.new
+    # booking_ids = []
+    # Booking.where(flat_id: params[:id]).each do |booking|
+    # booking_ids << booking.id
+    # end
+    # @relevant_reviews = []
+    # booking_ids.each do |id|
+    #   @relevant_reviews << Review.where(booking_id: id)
+    # end
+
+    # @flat = Flat.find(params[:id])
+    # @bookings = @flat.bookings
   end
 
   def new
@@ -63,13 +72,13 @@ class FlatsController < ApplicationController
 #   end
 
 # >>>>>>> 4a7a3013187c4f535c1cbe7c737d738d1b724817
-  def flat_params
-    params.require(:flat).permit(:key_description, :description, :price, :city, :zipcode, :street, :country, :average_rating, :wifi, :dishwasher, :allows_pets, :kitchen, :guests, :handicap, :balcony, :smoking, :tv, :availability, {pictures: []})
-  end
+def flat_params
+  params.require(:flat).permit(:key_description, :description, :price, :city, :zipcode, :street, :country, :average_rating, :wifi, :dishwasher, :allows_pets, :kitchen, :guests, :handicap, :balcony, :smoking, :tv, :availability, {pictures: []})
+end
 
-  def set_flat
-    @flat = Flat.find(params[:id])
-  end
+def set_flat
+  @flat = Flat.find(params[:id])
+end
 
 # =======
 #   private

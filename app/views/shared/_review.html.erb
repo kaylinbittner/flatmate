@@ -1,0 +1,6 @@
+  <%= simple_form_for([@booking, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit "Add review", class: "btn btn-success" %> <%= link_to "Back to profile", my_profile_path, class: "btn btn-secondary" %>
+  <% end %>
+
