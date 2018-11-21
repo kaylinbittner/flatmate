@@ -1,8 +1,8 @@
 Booking.destroy_all
 puts 'Cleaning database...'
 Flat.destroy_all
-
 puts 'Creating flats...'
+
 flats_attributes = [
   {
     key_description: 'Small Attic Appartment',

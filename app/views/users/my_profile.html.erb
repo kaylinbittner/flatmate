@@ -3,6 +3,7 @@
 <div class="profile-header-wrapper">
   <div class="profile-header-infos">
     <img src="#" alt="" class="avatar">
+    <img src="avatar.png" alt="Avatar" class="avatar">
     <h1>Welcome home, <%= @user.first_name %>
     </div>
   </div>
@@ -39,8 +40,30 @@
               <!-- profile ends -->
               <!-- bookings start -->
               <div class="tab-pane" id="tab_bookings">
-                <%= @user_bookings[0] %>
-                <%= link_to "Create review", my_profile_path, class: "btn btn-secondary" %>
+                <ul class="bookings">
+                  <% @user_bookings.each do |b| %>
+                  <li class="booking">
+                    <img src="images/gab.png" alt="" class="avatar-large">
+                    <div class="booking-name">
+                      <h3><%= @users.find(@flats.find(b.flat_id).user_id).email %></h3>
+                    </div>
+                    <div class="booking-body">
+                      <div class="price"><%= @flats.find(b.flat_id).city%>
+                      </div>
+                      <div class="price">
+                        <%= @flats.find(b.flat_id).key_description %>
+                      </div>
+                    </div>
+                    <div class="booking-status">
+                      <div class="status coming">Coming up</div>
+                      <div class="price"><%= @flats.find(b.flat_id).price %></div>
+                    </div>
+                    <div class="booking-review">
+                      <%= link_to "Create review", my_profile_path(b.id), class: "btn btn-secondary" %>
+                    </div>
+                  </li>
+                  <% end %>
+                </ul>
               </div>
               <!-- booking ends -->
               <!-- my flats start -->

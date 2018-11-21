@@ -19,9 +19,6 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "pundit"
-gem 'flex-slider-rails'
-gem 'jquery-turbolinks'
-gem "geocoder"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
