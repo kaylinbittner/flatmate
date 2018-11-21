@@ -1,8 +1,4 @@
-<div class="container">
-  <h2>Create a new review</h2>
-  <%= simple_form_for([@booking, @review]) do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating %>
-  <%= f.submit "Add a review", class: "btn btn-primary" %>
-  <% end %>
+<div class="container" style="text-align: left;">
+  <h1>Create a review</h1>
+  <%= render'shared/review' %>
 </div>
