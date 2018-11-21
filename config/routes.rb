@@ -7,5 +7,13 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :show, :create, :destroy] do
     end
   end
+
+  resources :flats do []
+    resources :reviews, only: :show
+  end
+
+  resources :bookings, only: [] do
+    resources :reviews
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
