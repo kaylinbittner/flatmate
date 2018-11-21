@@ -4,15 +4,15 @@
 
 <div class="flat-details">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+    <div class="col-xs-12 col-sm-3">
       <div class="header-flat-details">
         <div class="flat-owner-info">
-          <%= image_tag owner.photo.url, class: "img-circle" %>
+          <%= image_tag 'kaylinbittner-avatar', class: "img-circle" %>
           <p><%= owner.first_name.capitalize %> <%= owner.last_name.capitalize %></p>
         </div>
         <div class="flat-description">
-          <h1><%= @flat.key_description %></h1>
-          <p><%= @flat.city %>, <%= @flat.country %></p>
+          <h1 class="flat-title"><%= @flat.key_description %></h1>
+          <p><%= @flat.city %></p>
           <p class="rating">
             <% if @flat.average_rating != nil %>
               <% (@flat.average_rating).times do %>
@@ -28,8 +28,8 @@
     </div>
     <div class="col-xs-12 col-sm-4">
       <% action = @flat.id.to_s + "/bookings" %>
-      <form action=<%= action %> method="post">
-        <h4>Book this flat</h3>
+      <form class= "book-form" action=<%= action %> method="post">
+        <h4 class="book-title">Book this flat</h3>
           <div class="form-group">
             <div class="row">
               <div class="col-xs-6">
@@ -50,19 +50,20 @@
             </select>
           </div>
           <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-          <%= submit_tag 'Book it' %>
+          <%= submit_tag 'Book it', class: "book-button" %>
         </form>
       </div>
     </div>
+    <br>
     <div class="description-details">
       <div class="container">
         <div class="row" id="flat-data">
           <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <h2>About this flat</h2>
-            <p><%= @flat.description %></p>
+            <p class="fd"><%= @flat.description %></p>
             <div class="row">
               <div class="col-xs-12 col-sm-2">Amenities</div>
-              <div class="col-xs-12 col-sm-4">
+              <div class="list">
                 <ul class="list-unstyled">
                   <% if @flat.kitchen == true %>
                     <li>
