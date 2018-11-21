@@ -1,4 +1,4 @@
-<div id="pictureCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="hover">
+<div id="pictureCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="hover" >
   <ol class="carousel-indicators">
     <% @flat.pictures.each_with_index do |picture, index| %>
       <% if index == 0 %>
@@ -8,7 +8,7 @@
       <% end %>
     <% end %>
   </ol>
-  <div class="carousel-inner">
+  <div class="carousel-inner" >
     <% @flat.pictures.each_with_index do |picture, index| %>
       <% if index == 0 %>
         <div class="carousel-item active">
