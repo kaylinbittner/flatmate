@@ -14,12 +14,13 @@
           <h1><%= @flat.key_description %></h1>
           <p><%= @flat.city %>, <%= @flat.country %></p>
           <p class="rating">
-            <% @flat.average_rating.times do %>
-            <i class="fa fa-star" style="color: #ffb400"></i>
-            <% end %>
-            <% gs = 5 - @flat.average_rating %>
-            <% gs.times do %>
-              <i class="fa fa-star" style="color: grey"></i>
+            <% if @flat.average_rating != nil %>
+              <% (@flat.average_rating).times do %>
+                <i class="fas fa-star" style="color: #ffb400"></i>
+              <% end %>
+              <% (5 - @flat.average_rating).times do %>
+                <i class="far fa-star" style="color: #ffb400"></i>
+              <% end %>
             <% end %>
           </p>
         </div>
