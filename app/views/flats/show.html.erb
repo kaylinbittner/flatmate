@@ -26,20 +26,21 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <form action="#">
+      <% action = @flat.id.to_s + "/bookings" %>
+      <form action=<%= action %> method="post">
         <h4>Book this flat</h3>
           <div class="form-group">
             <div class="row">
               <div class="col-xs-6">
-                <input type="text" class="form-control" placeholder="checkin" id="checkin">
+                <input type="text" class="form-control" placeholder="checkin" id="checkin" name="booking[:checkin]">
               </div>
               <div class="col-xs-6">
-                <input type="text" class="form-control" placeholder="checkout">
+                <input type="text" class="form-control" placeholder="checkout" name="booking[:checkout]">
               </div>
             </div>
           </div>
           <div class="form-group">
-            <select name="" id="guests" class="form-control">
+            <select name="booking[:guests]" id="guests" class="form-control">
               <option value="1">1 guest</option>
               <option value="2">2 guests</option>
               <option value="3">3 guests</option>
@@ -47,7 +48,12 @@
               <option value="3">5 guests</option>
             </select>
           </div>
-          <%= link_to "Book it", my_profile_path, class: "btn btn-danger", type: "submit", style: "width: 100%" %>
+                 <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+
+
+
+
+          <%= submit_tag 'Book it' %>
         </form>
       </div>
     </div>
