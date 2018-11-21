@@ -1,12 +1,15 @@
-<div class="index-page">
-  <div class="index-cards col-xs-6"><%= render "./shared/card" %></div>
+<div class="index-page" style="display: flex; position: relative;">
+  <div class="index-cards" style="flex: 1;"><%= render "./shared/indexcards" %></div>
   <div
-    class="index-map col-xs-6"
+    class="index-map col-xs-6 col-sm-3 col-m-3"
     id="map"
-    style="width: 50%;
-    height: 565px;
+    style="
+    height: 100vh;
     position: sticky;
-    top: 800px;
+    top: 0;
+    width: 100%;
+    margin-right: 30px;
+    margin-top: 20px;
     padding-left: 10px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"

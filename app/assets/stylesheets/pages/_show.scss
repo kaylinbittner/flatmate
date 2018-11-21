@@ -1,3 +1,45 @@
+.book-form {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px 15px;
+  box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.4);
+  margin-left: 650px;
+  margin-top: 30px;
+  right: 30px;
+}
+.fd {
+  color: gray;
+  font-weight: lighter;
+  font-family: Helvetica;
+  font-size: 20px;
+  text-align: justify;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+li {
+  display: inline;
+  margin-right: 25px;
+  text-align: center;
+}
+ul {
+  width: 100%;
+}
+.img-circle {
+  border: solid 3px white;
+  box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.4);
+}
+.form-control {
+  font-family: Helvetica;
+  font-size: 15px;
+}
+.form-group {
+  font-family: Helvetica;
+  color: gray;
+}
+.book-title {
+  text-align: center;
+}
 .flatpicture-banner img{
   width: 100%;
   height: 60vh;
@@ -12,6 +54,7 @@
 
 .flat-owner-info img{
   width: 80px;
+  margin-bottom: 5px;
 }
 
 .flat-owner-info {
@@ -29,16 +72,24 @@
   font-size: 14px;
   color: #777777;
 }
+.flat-title {
+  padding-top: 30px;
+}
 
 .flat-description h1{
   font-size: 18px;
-  margin: 0;
+  margin-top: -10px;
 }
 
 .header-flat-details{
   display: flex;
   flex: justify-content;
-  padding: 30px 30px 30px 0;
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 30px;
+  box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.4);
+  margin-left: 20px;
 }
 
 .flat-details.row {
@@ -59,4 +110,22 @@ form {
 
 #flat-data strong {
     margin-left: 9px;
+}
+.book-button {
+  margin-left: 65px;
+  font-family: Helvetica;
+  font-weight: bolder;
+  background-color: #ff5b5e;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: solid #ff5b5e;
+  cursor: pointer !important;
+  display: inline-block !important;
+  position: relative !important;
+  text-align: center !important;
+  transition-property: background, border-color, color !important;
+  transition-duration: 0.2s !important;
+  transition-timing-function: ease-out !important;
 }
