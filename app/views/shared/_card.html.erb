@@ -12,7 +12,7 @@
               <div class="card-description"> <%= f.key_description %> | <strong><%= f.price %></strong> </div>
               <div class="card-rating">
                 <% if f.average_rating != nil %>
-                  <% (f.average_rating).times do %>
+                  <%= (f.average_rating).times do %>
                     <i class="fas fa-star" style="color: #ffb400"></i>
                   <% end %>
                   <% (5 - f.average_rating).times do %>
