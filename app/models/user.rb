@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   has_many :bookings
   has_many :flats, dependent: :destroy
   validates :first_name, :last_name, presence: true
