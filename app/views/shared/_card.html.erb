@@ -5,7 +5,7 @@
         <%= link_to flat_path(f), class: "text-dec" do %>
           <div class="card">
             <div class="flat-image">
-              <% if f.pictures != nil %>
+              <% if f.pictures.class != nil %>
                 <%= image_tag f.pictures[0].url %>
               <% end %>
               <div class="card-city"> <%= f.city %></div>
