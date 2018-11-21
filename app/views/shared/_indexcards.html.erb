@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <% @flats.each do |f| %>
+      <div class="col-xs-12 col-sm-6 col-m-6">
+        <%= link_to flat_path(f), class: "text-dec" do %>
+          <div class="index-card">
+            <div class="index-flat-image">
+              <%= image_tag 'flat' %>
+              <div class="index-card-city"> <%= f.city %></div>
+            </div>
+            <div>
+              <div class="index-card-description"> <%= f.key_description %> | <strong><%= f.price %></strong> </div>
+              <div class="index-card-rating">
+                <% if f.average_rating != nil %>
+                  <% (f.average_rating).times do %>
+                    <i class="fas fa-star" style="color: #ffb400"></i>
+                  <% end %>
+                  <% (5 - f.average_rating).times do %>
+                    <i class="far fa-star" style="color: #ffb400"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

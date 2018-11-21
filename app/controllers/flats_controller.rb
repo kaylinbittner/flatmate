@@ -7,13 +7,11 @@ class FlatsController < ApplicationController
 
   def index
     @flats = if params[:city]
-      Flat.where('city LIKE ?', "%#{params[:city]}%")
-    else
-      Flat.all
-    end
-
-    # flats = Flat.where.not(latitude: nil, longitude: nil)
-
+       Flat.where('city LIKE ?', "%#{params[:city]}%")
+     else
+       Flat.all
+     end
+    #flats = Flat.where.not(latitude: nil, longitude: nil)
     @markers = @flats.map do |flat|
       {
         lng: flat.longitude,
