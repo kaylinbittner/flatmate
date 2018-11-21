@@ -111,6 +111,7 @@ form {
 #flat-data strong {
     margin-left: 9px;
 }
+
 .book-button {
   margin-left: 65px;
   font-family: Helvetica;
@@ -128,4 +129,8 @@ form {
   transition-property: background, border-color, color !important;
   transition-duration: 0.2s !important;
   transition-timing-function: ease-out !important;
+}
+
+.img-circle {
+  border-radius: 50%,
 }

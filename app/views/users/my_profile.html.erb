@@ -80,16 +80,16 @@
                         </div>
                         <div>
                           <div class="card-description"> <%= f.key_description %> | <strong><%= f.price %></strong> </div>
-                          <div class="card-rating">
-                            <% if f.average_rating != nil %>
+                          <% if f.average_rating != nil %>
+                            <div class="card-rating">
                               <% (f.average_rating).times do %>
-                              <i class="fas fa-star" style="color: #ffb400"></i>
+                                <i class="fas fa-star" style="color: #ffb400"></i>
                               <% end %>
                               <% (5 - f.average_rating).times do %>
-                              <i class="far fa-star" style="color: #ffb400"></i>
+                                <i class="far fa-star" style="color: #ffb400"></i>
                               <% end %>
-                            <% end %>
-                          </div>
+                            </div>
+                          <% end %>
                           <%= link_to "Edit flat", edit_flat_path(f.id), class: "far fa-edit" %>
                         </div>
                       </div>
