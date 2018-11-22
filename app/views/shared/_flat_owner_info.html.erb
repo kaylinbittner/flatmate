@@ -1,0 +1,22 @@
+<div class="header-flat-details" style="margin-top: 75px; width: 400px;">
+  <div class="flat-owner-info" style="margin-right: 20px;">
+    <% owner = User.find(@flat.user_id) %>
+    <%= image_tag owner.photo.url, class: "img-circle" %>
+      <p><%= owner.first_name.capitalize %> <%= owner.last_name.capitalize %></p>
+  </div>
+
+  <div class="flat-description">
+    <h1 class="flat-title"><%= @flat.key_description %></h1>
+    <p><%= @flat.city %></p>
+    <p class="price"><%= @flat.price %></p>
+    <p class="rating">
+    <% if @flat.average_rating != nil %>
+      <% (@flat.average_rating).times do %>
+        <i class="fas fa-star" style="color: #ffb400"></i>
+      <% end %>
+      <% (5 - @flat.average_rating).times do %>
+        <i class="far fa-star" style="color: #ffb400"></i>
+      <% end %>
+    <% end %> </p>
+  </div>
+</div>

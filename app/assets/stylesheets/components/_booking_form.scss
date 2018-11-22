@@ -1,0 +1,43 @@
+.book-form {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px 15px;
+  box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.4);
+  margin-top: 30px;
+  right: 30px;
+  width: 300px;
+  display: relative;
+}
+.form-control {
+  font-family: Helvetica;
+  font-size: 15px;
+}
+.form-group {
+  font-family: Helvetica;
+  color: gray;
+}
+.book-title {
+  text-align: center;
+}
+form {
+  background-color: #F4F4F4;
+  padding: 30px 30px 30px 0;
+}
+.book-button {
+  margin-left: 70px;
+  font-family: Helvetica;
+  font-weight: bolder;
+  background-color: #ff5b5e;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: solid #ff5b5e;
+  cursor: pointer !important;
+  display: inline-block !important;
+  position: relative !important;
+  text-align: center !important;
+  transition-property: background, border-color, color !important;
+  transition-duration: 0.2s !important;
+  transition-timing-function: ease-out !important;
+}
