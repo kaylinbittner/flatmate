@@ -65,38 +65,35 @@
               <!-- booking ends -->
               <!-- my flats start -->
               <div class="tab-pane" id="tab_flats">
-                <div class="container">
-                  <div class="row">
-                    <% @user_flats.each do |f| %>
-                    <div class="col-xs-12 col-sm-4 col-m-3">
-                      <%= link_to flat_path(f), class: "text-dec" do %>
-                      <div class="card">
-                        <div class="flat-image">
-                          <% if f.pictures != [] %>
-                            <%= image_tag f.pictures[0].url %>
-                          <% end %>
-                          <div class="card-city"> <%= f.city %></div>
-                        </div>
-                        <div>
-                          <div class="card-description"> <%= f.key_description %> | <strong><%= f.price %></strong> </div>
-                          <% if f.average_rating != nil %>
-                            <div class="card-rating">
-                              <% (f.average_rating).times do %>
-                                <i class="fas fa-star" style="color: #ffb400"></i>
-                              <% end %>
-                              <% (5 - f.average_rating).times do %>
-                                <i class="far fa-star" style="color: #ffb400"></i>
-                              <% end %>
-                            </div>
-                          <% end %>
-                          <%= link_to "Edit flat", edit_flat_path(f.id), class: "far fa-edit" %>
-                        </div>
+                <ul class="bookings">
+                  <% @user_flats.each do |f| %>
+                  <li class="booking">
+                    <div class="booking-name">
+                   <div class="price">Sharing since</div>
+                    <div class="price"><%= f.created_at.strftime("%Y-%m-%d") %></div>
+                    </%>
+                    </div>
+                    <div class="booking-name">
+                      <div class="price"><%=f.description%></div>
+                    </div>
+                    <div class="booking-status">
+                      <% if f.average_rating != nil %>
+                      <div class="card-rating">
+                        <% (f.average_rating).times do %>
+                        <i class="fas fa-star" style="color: #ffb400"></i>
+                        <% end %>
+                        <% (5 - f.average_rating).times do %>
+                        <i class="far fa-star" style="color: #ffb400"></i>
+                        <% end %>
                       </div>
                       <% end %>
                     </div>
-                    <% end %>
-                  </div>
-                </div>
+                    <div class="booking-review">
+                      <%= link_to "Edit flat", edit_flat_path(f.id), class: "far fa-edit" %>
+                    </div>
+                  </li>
+                  <% end %>
+                </ul>
                 <%= link_to "Create a flat", new_flat_path, class: "btn btn-secondary" %>
               </div>
               <!-- my flats ends -->
@@ -106,7 +103,6 @@
       </div>
     </div>
   </div>
-
 
 
 

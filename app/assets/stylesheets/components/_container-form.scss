@@ -1,0 +1,12 @@
+.container-form {
+ background-image: url("room.jpg");
+ background-size: cover;
+}
+
+.form-inputs {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 50px;
+  width: 450px;
+  border-radius: 3px;
+  max-height: calc(100vh - 100px) !important;
+}
