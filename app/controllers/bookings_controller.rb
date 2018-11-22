@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def new
     @flat = Flat.find(params[:flat_id])
     redirect_to flat_bookings_path(@flat)
@@ -23,6 +22,5 @@ class BookingsController < ApplicationController
   def bookings_params
     params.require(:booking).permit(:checkin, :checkout, :guests)
   end
-
 end
 
