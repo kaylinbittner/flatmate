@@ -12,11 +12,12 @@ class FlatsController < ApplicationController
      else
        Flat.all
      end
-    #flats = Flat.where.not(latitude: nil, longitude: nil)
+    # @flats = Flat.where.not(latitude: nil, longitude: nil)
     @markers = @flats.map do |flat|
       {
         lng: flat.longitude,
-        lat: flat.latitude
+        lat: flat.latitude,
+        infoWindow: { content: render_to_string(partial: "/shared/map_window", locals: { flat: flat }) }
       }
     end
   end
@@ -50,7 +51,12 @@ class FlatsController < ApplicationController
   end
 
   def destroy
-    @flat.destroy
+    @flat = Flat.find(params[:id])
+    if @flat.destroy
+      redirect_to my_profile_path
+    else
+      render :edit
+    end
   end
 
   private
