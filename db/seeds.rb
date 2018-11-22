@@ -50,14 +50,22 @@ url_list = ["https://res.cloudinary.com/dqssam2go/image/upload/v1542884880/flat_
 
 flat_list = []
 
-key_description_array = []
+key_description_array = ["modern Design, Breakfast & Balcony", "Cosy & Nice Studio", "Room with private bathroom", "Escape the ordinary", "Central Bright & Light Apartment", "Adorable apartment near City Center", "Beautiful big Room", "Central & Stylish", "perfect spot in Down Town"]
+
+address = {
+  street: ["Markgrafenstraße", "Schönholzerstraße 5", "Blumenstraße 28", "Kapuzinersraße 39", "Holstenwall 24", "Bogenstraße 27", "Kurfürstenstraße 142", "Grunewaldstraße 20", "Grünbergerstraße 38", "Karl-Marx-Straße 65", "
+Rudi-Dutschke-Straße 26"],
+  city: ["Berlin", "Berlin", "München", "München", "Hamburg", "Hamburg", "Berlin", "Berlin", "Berlin", "Berlin", "Berlin"],
+  zipcode: ["10117", "10115", "80331", "80469", "20355" "20144", "10785", "10823", "10245", "12043", "10969"]
+}
 
 20.times do
-  key_description =
-  price = "#{rand(50..450)}€"
-  city = Faker::Address.city
-  street = Faker::Address.street_address
-  zipcode = Faker::Address.zip_code
+  random = rand(0..3)
+  key_description = key_description_array[rand(0...key_description_array.length)]
+  price = "#{rand(40..250)}€"
+  city = address[:city][random]
+  street = address[:street][random]
+  zipcode = address[:zipcode][random]
   average_rating = rand(0..5)
   description = 'This is a placeholer description. I really regret making this description be a minimum of 150 characters. I think I have hit that minimum, but I am not sure. Death to Fritz.'
   wifi = rand(0..1)
