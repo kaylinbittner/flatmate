@@ -1,4 +1,5 @@
 <div class="container" style="text-align: left;">
   <h1>Update your flat</h1>
-  <%= render 'shared/form', flat: @flat %>
+  <%= render 'shared/form', flat: @flat %> <br>
+  <%= link_to 'Delete Flat', flat_path(@flat), method: :delete, class: 'button' %> <br>
 </div>
