@@ -1,0 +1,26 @@
+.banner-form {
+  color: white;
+  height: calc(100vh - 70px) !important;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-block-form {
+  justify-content: flex-center;
+  margin-right: 45%;
+  margin-bottom: 15px;
+}
+
+.form-inputs {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 50px;
+  width: 450px;
+  border-radius: 3px;
+  max-height: calc(100vh - 100px) !important;
+}
+
+.form-actions{
+  text-align: center;
+  margin: 15px;
+}
