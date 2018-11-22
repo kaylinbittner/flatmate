@@ -1,0 +1,30 @@
+<h2>Reviews</h2>
+<ul class="bookings">
+  <% @flat.reviews.each do |r| %>
+  <li class="booking">
+    <div class="booking-name">
+      <%= image_tag r.booking.user.photo.url, class: "avatar-review" %>
+      <h3><%= r.booking.user.first_name %> <%= r.booking.user.last_name %></h3>
+    </div>
+    <div class="booking-body">
+      <div class="price"><%=r.content %>
+      </div>
+    </div>
+    <div class="booking-status">
+      <div class="price">
+        <% if r.rating != nil %>
+        <% (r.rating).times do %>
+        <i class="fas fa-star" style="color: #ffb400"></i>
+        <% end %>
+        <% (5 - r.rating).times do %>
+        <i class="far fa-star" style="color: #ffb400"></i>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="status"><%= r.created_at.strftime("%Y-%m-%d") %></div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+
