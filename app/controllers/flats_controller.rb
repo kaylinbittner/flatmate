@@ -24,17 +24,7 @@ class FlatsController < ApplicationController
 
   def show
     @booking = Booking.new
-    # booking_ids = []
-    # Booking.where(flat_id: params[:id]).each do |booking|
-    # booking_ids << booking.id
-    # end
-    # @relevant_reviews = []
-    # booking_ids.each do |id|
-    #   @relevant_reviews << Review.where(booking_id: id)
-    # end
-
-    # @flat = Flat.find(params[:id])
-    # @bookings = @flat.bookings
+    @flat.reviews
   end
 
   def new
