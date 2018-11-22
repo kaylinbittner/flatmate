@@ -1,0 +1,63 @@
+
+<div class="row" id="flat-data" style="justify-content: center;">
+  <h2 class="about-flat-header" id="head">About this flat</h2>
+  <p class="fd"><%= @flat.description %></p>
+
+  <div class="row">
+    <div class="amenities-header">Amenities - </div>
+              <div class="list">
+                <ul class="list-unstyled">
+                  <% if @flat.kitchen == true %>
+                  <li>
+                    <i class="fas fa-utensils"></i>
+                    <strong>Kitchen</strong>
+                  </li>
+                  <% end %>
+                  <% if @flat.dishwasher == true %>
+                  <li>
+                    <i><%= image_tag 'dishwasher.png', style: "width: 20px"%></i>
+                    <strong>Dishwasher</strong>
+                  </li>
+                  <% end %>
+                  <% if @flat.wifi == true %>
+                  <li>
+                    <i class="fas fa-wifi"></i>
+                    <strong>Wifi</strong>
+                  </li>
+                  <% end %>
+                  <% if @flat.tv == true %>
+                  <li>
+                    <i class="fas fa-tv"></i>
+                    <strong>TV</strong>
+                  </li>
+                  <% end %>
+                  <% if @flat.allows_pets == true %>
+                  <li>
+                    <i class="fas fa-paw"></i>
+                    <strong>Pets</strong>
+                  </li>
+                  <% end %>
+                  <% if @flat.handicap == true %>
+                  <li>
+                    <i class="fas fa-wheelchair"></i>
+                    <strong>handicap accessible</strong>
+                  </li>
+                  <% end %>
+                  <% if @flat.balcony == true %>
+                  <li>
+                    <i><%= image_tag 'balcony.png', style: "width: 20px"%></i>
+                    <strong>Balcony</strong>
+                  </li>
+                  <% end %>
+                  <% if @flat.smoking == true %>
+                  <li>
+                    <i class="fas fa-smoking"></i>
+                    <strong>Smoking</strong>
+                  </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+</div>
+
