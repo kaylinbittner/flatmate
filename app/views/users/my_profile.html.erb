@@ -41,9 +41,9 @@
                 <ul class="bookings">
                   <% @user_bookings.each do |b| %>
                   <li class="booking">
-                    <img src="images/gab.png" alt="" class="avatar-large">
                     <div class="booking-name">
-                      <h3><%= @users.find(@flats.find(b.flat_id).user_id).email %></h3>
+                      <%= image_tag b.flat.user.photo.url, class: "avatar-review" %>
+                      <h3><%= b.flat.user.first_name %> <%= b.flat.user.last_name %></h3>
                     </div>
                     <div class="booking-body">
                       <div class="price"><%= @flats.find(b.flat_id).city%>
