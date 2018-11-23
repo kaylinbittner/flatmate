@@ -2,12 +2,11 @@
   color: white;
   height: calc(100vh - 70px) !important;
   background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 .form-block {
-  justify-content: flex-start;
-  margin-right: 45%;
-  margin-bottom: 15px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 45%;
 }
