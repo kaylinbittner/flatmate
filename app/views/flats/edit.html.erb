@@ -1,11 +1,12 @@
 <div class="internal-banner-form" style="background-image: url( <%=image_path('room.jpg')%>);">
   <div class="internal-form-block-form">
    <div class="internal-form-inputs">
-    <h1>Update your flat</h1>
-   <%= render 'shared/edit_form', flat: @flat %> <br>
-     <div class="internal-form-actions">
-  </div>
-     <br>
-  </div>
+    <h1 class="book-title">Update your flat</h1>
+    <%= render 'shared/form', flat: @flat %> <br>
+    <div class="internal-form-actions">
+      <%= link_to 'Delete Flat', flat_path(@flat), method: :delete, class: 's-button' %>
     </div>
+    <br>
+  </div>
+</div>
 </div>
