@@ -39,26 +39,28 @@
               <!-- bookings start -->
               <div class="tab-pane" id="tab_bookings">
                 <ul class="bookings">
-                  <% @user_bookings.each do |b| %>
-                  <li class="booking">
-                    <div class="booking-name">
-                      <%= image_tag b.flat.user.photo.url, class: "avatar-review" %>
-                      <h3><%= b.flat.user.first_name %> <%= b.flat.user.last_name %></h3>
-                    </div>
-                    <div class="booking-body">
-                      <div class="price"><%= @flats.find(b.flat_id).city%>
-                      </div>
-                      <div class="price">
-                        <%= @flats.find(b.flat_id).key_description %>
-                      </div>
-                    </div>
-                    <div class="booking-status">
-                      <div class="status coming">Coming up</div>
-                    </div>
-                    <div class="booking-review">
-                      <%= link_to "Create review", new_booking_review_path(b.id), class: "btn btn-secondary" %>
-                    </div>
-                  </li>
+                  <% if @user_bookings.present? %>
+                    <% @user_bookings.each do |b| %>
+                      <li class="booking">
+                        <div class="booking-name">
+                          <%= image_tag b.flat.user.photo.url, class: "avatar-review" %>
+                          <h3><%= b.flat.user.first_name %> <%= b.flat.user.last_name %></h3>
+                        </div>
+                        <div class="booking-body">
+                          <div class="price"><%= @flats.find(b.flat_id).city%>
+                          </div>
+                          <div class="price">
+                            <%= @flats.find(b.flat_id).key_description %>
+                          </div>
+                        </div>
+                        <div class="booking-status">
+                          <div class="status coming">Coming up</div>
+                        </div>
+                        <div class="booking-review">
+                          <%= link_to "Create review", new_booking_review_path(b.id), class: "btn btn-secondary" %>
+                        </div>
+                      </li>
+                      <% end %>
                   <% end %>
                 </ul>
               </div>
