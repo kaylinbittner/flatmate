@@ -1,0 +1,26 @@
+<%= simple_form_for @flat do |f| %>
+  <%= f.input :description %>
+  <%= f.input :key_description %>
+  <%= f.input :city %>
+  <%= f.input :street %>
+  <%= f.input :zipcode %>
+  <%= f.input :price %>
+  <%= f.input :guests %>
+  <%= f.label :pictures %>
+  <%= f.file_field :pictures, multiple: true %>
+  <%= f.label :wifi %>
+  <%= f.check_box :wifi %>
+  <%= f.label :dishwasher %>
+  <%= f.check_box :dishwasher %>
+  <%= f.label :allows_pets %>
+  <%= f.check_box :allows_pets %>
+  <%= f.label :kitchen %>
+  <%= f.check_box :kitchen %>
+  <%= f.label :smoking %>
+  <%= f.check_box :smoking %>
+  <%= f.label :balcony %>
+  <%= f.check_box :balcony %>
+  <%= f.label :tv %>
+  <%= f.check_box :tv %>
+  <%= f.submit class: "btn btn-success" %> <%= link_to "Back to profile", my_profile_path, class: "btn btn-secondary" %>
+<% end %>

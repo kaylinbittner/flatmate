@@ -1,0 +1,55 @@
+.signupbanner {
+  color: white;
+  height: calc(150vh - 70px) !important;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup-header {
+    font-family: Helvetica;
+    font-weight: bolder;
+    color: black;
+    font-size: 35px;
+    margin-bottom: 15px;
+    text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.signup-container{
+  background-color: rgba(255,255,255,0.9);
+  padding: 7px 100px;
+  border-radius: 5px;
+  box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.4);
+  margin-left: 20px;
+}
+
+
+.signuplabel {
+  color: rgb(60, 60, 60);
+  font-family: Helvetica;
+  font-size: 12px;
+  padding: 0px;
+  text-shadow: 0 0.5px 0.5px rgba(0,0,0,0.3);
+  letter-spacing: 1.5px;
+}
+
+.signupbutton {
+  font-family: Helvetica;
+  font-weight: bolder;
+  background-color: #ff5b5e;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: solid #ff5b5e;
+  cursor: pointer !important;
+  display: inline-block !important;
+  position: relative !important;
+  text-align: center !important;
+  transition-property: background, border-color, color !important;
+  transition-duration: 0.2s !important;
+  transition-timing-function: ease-out !important;
+}
+
+
+

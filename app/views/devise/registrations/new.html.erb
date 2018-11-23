@@ -1,8 +1,9 @@
-<div class="banner-form" style="background-image: url( <%=image_path('sunset.jpg')%>);">
-  <div class="form-block-form">
+<div class="internal-banner-form" style="background-image: url( <%=image_path('sunset.jpg')%>);">
+
+  <div class="internal-form-block-form">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-    <div class="form-inputs">
+    <div class="internal-form-inputs">
       <h2>Become a flatmate</h2>
       <%= f.input :first_name,
       required: true,
@@ -26,10 +27,10 @@
       <%= f.label :photo %>
       <%= f.file_field :photo %>
       <%= f.hidden_field :photo_cache %>
-      <div class="form-actions">
+      <div class="internal-form-actions">
         <%= f.button :submit, "Join now", class: "button" %>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>

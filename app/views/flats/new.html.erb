@@ -1,6 +1,12 @@
-<div class="container-form" >
-  <div class="form-inputs">
-  <h1>Create a flat</h1>
-  <%= render 'shared/form', flat: @flat %>
+<div class="internal-banner-form" style="background-image: url( <%=image_path('room.jpg')%>);">
+  <div class="internal-form-block-form">
+   <div class="internal-form-inputs">
+    <h1>Create a flat</h1>
+    <%= render 'shared/create_form', flat: @flat %> <br>
+    <div class="internal-form-actions">
+    </div>
+    <br>
   </div>
 </div>
+</div>
+
