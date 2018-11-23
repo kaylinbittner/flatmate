@@ -63,7 +63,7 @@
                     </div>
                   </div>
                   <div class="booking-review">
-                    <%= link_to "Create review", new_booking_review_path(b.id), class: "button" %>
+                    <%= link_to "Create review", new_booking_review_path(b.id), class: "s-button" %>
                   </div>
                 </li>
               <% end %>
@@ -96,7 +96,7 @@
             <% end %>
             </div>
             <div class="booking-review">
-              <%= link_to "Edit flat", edit_flat_path(f.id), class: "btn btn-secondary" %>
+              <%= link_to "Edit", edit_flat_path(f.id), class: "btn btn-secondary" %>
             </div>
           </li>
           <% end %>

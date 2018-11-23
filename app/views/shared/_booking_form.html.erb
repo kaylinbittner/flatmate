@@ -1,12 +1,9 @@
-  <div class="form-wrapper book-form">
-    <h2 class="book-title">Book this flat</h2>
-    <% action = @flat.id.to_s + "/bookings" %>
-    <div class="form-group"> <%= simple_form_for action, method: "post" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Choose a Start Date", label: false %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Choose an End Date", label: false %>
-      <%= f.input :guests, collection: [1, 2, 3, 4, 5] %>
+<div class="form-wrapper book-form">
+  <h2 class="book-title">Book this flat</h2>
+  <div class="form-group">
+    <%= simple_form_for([@flat, @flat.bookings.new], method: "post") do |f| %>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-      <%= link_to "Book it", my_profile_path, class: "book-button" %>
-    <% end %> </div>
+      <%= f.submit "Book it", class: "book-button" %>
+    <% end %>
   </div>
-
+</div>
