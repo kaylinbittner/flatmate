@@ -39,7 +39,7 @@
               <!-- bookings start -->
               <div class="tab-pane" id="tab_bookings">
                 <ul class="bookings">
-                  <% if @user_bookings.present? %>
+                  <% if @user_bookings.exist? %>
                     <% @user_bookings.each do |b| %>
                       <li class="booking">
                         <div class="booking-name">
