@@ -1,7 +1,6 @@
 .booking {
   display: flex;
   align-items: center;
-  padding: 20px;
   justify-content: space-between;
   border-bottom: 1px solid rgba(220,224,244,0.4);
   margin-right: 0px !important;
@@ -20,9 +19,9 @@ ul.bookings {
   padding-left: 0px;
   min-width: 100px;
 }
-.booking-name h5 {
-  // font-size: 13px;
-  margin-top: 0px;
+.booking-name h3 {
+  font-size: 20px;
+  margin-top: 5px;
 }
 .booking-name p {
   font-size: 13px;
@@ -49,8 +48,6 @@ ul.bookings {
 .booking-status {
   // font-size: 14px;
   font-weight: bold;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .booking-review {
   padding-left: 20px;
