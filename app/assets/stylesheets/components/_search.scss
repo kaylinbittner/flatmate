@@ -36,7 +36,7 @@
   text-shadow: 0 0.5px 0.5px rgba(0,0,0,0.3);
   letter-spacing: 1.5px;
 }
-.button {
+.s-button {
   font-family: Helvetica;
   font-weight: bolder;
   background-color: #ff5b5e;
@@ -52,4 +52,14 @@
   transition-property: background, border-color, color !important;
   transition-duration: 0.2s !important;
   transition-timing-function: ease-out !important;
+}
+.s-button:hover {
+  background-color: #ff5b5e;
+  opacity: 0.7;
+  text-decoration: none;
+}
+.s-button.focus {
+  background-color: #ff5b5e;
+  opacity: 0.7;
+  text-decoration: none;
 }

@@ -1,4 +1,4 @@
-<%= simple_form_for @flat do |f| %>
+<div class="form-form"><%= simple_form_for @flat do |f| %>
   <%= f.input :description %>
   <%= f.input :key_description %>
   <%= f.input :city %>
@@ -24,4 +24,4 @@
   <%= f.check_box :tv %>
   <%= f.submit class: "btn btn-success" %>
 <% end %>
-<%= link_to "Back to profile", my_profile_path, class: "btn btn-secondary" %>
+<%= link_to "Back to profile", my_profile_path, class: "btn btn-secondary" %></div>

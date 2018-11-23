@@ -11,7 +11,7 @@
               <div class="card-city"> <%= f.city %></div>
             </div>
             <div>
-              <div class="card-description"> <%= f.key_description %> | <strong><%= f.price %></strong> </div>
+              <div class="card-description"> <%= f.key_description %> <br> <strong><%= f.price %></strong> </div>
               <div class="card-rating">
                 <% if f.average_rating != nil %>
                   <% (f.average_rating).times do %>
