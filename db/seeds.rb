@@ -53,8 +53,8 @@ flat_list = []
 key_description_array = ["modern Design, Breakfast & Balcony", "Cosy & Nice Studio", "Room with private bathroom", "Escape the ordinary", "Central Bright & Light Apartment", "Adorable apartment near City Center", "Beautiful big Room", "Central & Stylish", "perfect spot in Down Town"]
 
 address = {
-  street: ["Markgrafenstraße", "Schönholzerstraße 5", "Blumenstraße 28", "Kapuzinersraße 39", "Holstenwall 24", "Bogenstraße 27", "Kurfürstenstraße 142", "Grunewaldstraße 20", "Grünbergerstraße 38", "Karl-Marx-Straße 65", "
-Rudi-Dutschke-Straße 26"],
+  street: ["Markgrafenstrasse", "Schönholzerstrasse 5", "Blumenstrasse 28", "Kapuzinersrasse 39", "Holstenwall 24", "Bogenstrasse 27", "Kurfürstenstrasse 142", "Grunewaldstrasse 20", "Grünbergerstrasse 38", "Karl-Marx-Strasse 65", "
+Rudi-Dutschke-Strasse 26"],
   city: ["Berlin", "Berlin", "München", "München", "Hamburg", "Hamburg", "Berlin", "Berlin", "Berlin", "Berlin", "Berlin"],
   zipcode: ["10117", "10115", "80331", "80469", "20355" "20144", "10785", "10823", "10245", "12043", "10969"]
 }

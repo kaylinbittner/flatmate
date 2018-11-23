@@ -9,9 +9,12 @@
 
 
 
-<div class="container-fluid flex" style="margin: 0px 0px; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap;">
+<div class="container-fluid flex" style="margin: 0px 0px 10px 0px; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap;">
   <%= render './shared/about_this_flat' %>
 </div>
 
-<%= render 'reviews/show' %>
+<% if @booking.reviews.present? %>
+  <%= render 'reviews/show' %>
+<% end %>
+
 
