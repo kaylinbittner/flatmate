@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def my_profile
     @user = current_user
-    @user_bookings = current_user.bookings if current_user.bookings.present?
+    @user_bookings = current_user.bookings if current_user.present?
+    raise
     @user_flats = current_user.flats
     @flats = Flat.all
     @users = User.all
