@@ -28,7 +28,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
       markers.forEach((marker) => {
         bounds.extend([marker.lng, marker.lat]);
       });
-      map.fitBounds(bounds, { duration: 1000, padding: 75 })
+      map.fitBounds(bounds, { duration: 10000, padding: 75 })
     }
   markers.forEach((marker) => {
        new mapboxgl.Marker()

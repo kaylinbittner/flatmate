@@ -1,6 +1,6 @@
 .banner-form {
   color: white;
-  height: calc(100vh - 70px) !important;
+  height: calc(100vh - 50px) !important;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -23,4 +23,9 @@
 .form-actions{
   text-align: center;
   margin: 15px;
+}
+
+.form-check-label {
+padding-left: 20px;
+
 }
