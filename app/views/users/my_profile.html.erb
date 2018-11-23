@@ -2,109 +2,112 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <div class="profile-header-wrapper">
   <div class="profile-header-infos">
-    <h1>Welcome home, <%= @user.first_name %>
+    <h1>Welcome home, <%= @user.first_name %></h1>
     </div>
   </div>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="tabbable-panel">
-          <div class="tabbable-line">
-            <ul class="nav nav-tabs ">
-              <li class="active">
-                <a href="#tab_profile" data-toggle="tab">
-                Profile </a>
-              </li>
-              <li>
-                <a href="#tab_bookings" data-toggle="tab">
-                My bookings</a>
-              </li>
-              <li>
-                <a href="#tab_flats" data-toggle="tab">
-                My flats </a>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <!-- profile start -->
-              <div class="tab-pane active" id="tab_profile">
-                <ul>
-                  <li>First name:<%= @user.first_name %></li>
-                  <li>Last name:<%= @user.last_name %></li>
-                  <li>Email:<%= @user.email %></li>
-                  <li>Phone:<%= @user.phone %></li>
-                </ul>
-                <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-secondary" %>
+    <div class="tabbable-panel">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="font-size: 16px;">My profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="font-size: 16px;">My bookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" style="font-size: 16px;">My flats</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <!-- profile start -->
+        <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <ul class="bookings">
+            <li class="booking">
+              <div class="booking-name">
+                <%= image_tag @user.photo.url, class: "avatar-review" %>
               </div>
+              <div class="booking-name">
+                <h5>First name</h5>
+                <div class="price"><%= @user.first_name%></div>
+               </div>
+              <div class="booking-name">
+                <h5>Last name</h5>
+                <div class="price"><%= @user.last_name%></div>
+              </div>
+              <div class="booking-name">
+                <h5>Email</h5>
+                <div class="price"><%= @user.email%></div>
+               </div>
               <!-- profile ends -->
               <!-- bookings start -->
-              <div class="tab-pane" id="tab_bookings">
-                <ul class="bookings">
-                  <% if @user_bookings.exists? %>
-                    <% @user_bookings.each do |b| %>
-                      <li class="booking">
-                        <div class="booking-name">
-                          <%= image_tag b.flat.user.photo.url, class: "avatar-review" %>
-                          <h3><%= b.flat.user.first_name %> <%= b.flat.user.last_name %></h3>
-                        </div>
-                        <div class="booking-body">
-                          <div class="price"><%= @flats.find(b.flat_id).city%>
-                          </div>
-                          <div class="price">
-                            <%= @flats.find(b.flat_id).key_description %>
-                          </div>
-                        </div>
-                        <div class="booking-status">
-                          <div class="status coming">Coming up</div>
-                        </div>
-                        <div class="booking-review">
-                          <%= link_to "Create review", new_booking_review_path(b.id), class: "btn btn-secondary" %>
-                        </div>
-                      </li>
-                      <% end %>
-                  <% end %>
-                </ul>
+              <div class="booking-review">
+                <%= link_to "Edit", edit_user_registration_path, class: "btn btn-secondary" %>
               </div>
-              <!-- booking ends -->
-              <!-- my flats start -->
-              <div class="tab-pane" id="tab_flats">
-                <ul class="bookings">
-                  <% @user_flats.each do |f| %>
-                  <li class="booking">
-                    <div class="booking-name">
-                   <div class="price">Sharing since</div>
-                    <div class="price"><%= f.created_at.strftime("%Y-%m-%d") %></div>
-                    </%>
-                    </div>
-                    <div class="booking-name">
-                      <div class="price"><%=f.description%></div>
-                    </div>
-                    <div class="booking-status">
-                      <% if f.average_rating != nil %>
-                      <div class="card-rating">
-                        <% (f.average_rating).times do %>
-                        <i class="fas fa-star" style="color: #ffb400"></i>
-                        <% end %>
-                        <% (5 - f.average_rating).times do %>
-                        <i class="far fa-star" style="color: #ffb400"></i>
-                        <% end %>
-                      </div>
-                      <% end %>
-                    </div>
-                    <div class="booking-review">
-                      <%= link_to "Edit flat", edit_flat_path(f.id), class: "far fa-edit" %>
-                    </div>
-                  </li>
-                  <% end %>
-                </ul>
-                <%= link_to "Create a flat", new_flat_path, class: "btn btn-secondary" %>
-              </div>
-              <!-- my flats ends -->
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
+        <!-- profile ends -->
+        <!-- bookings start -->
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <ul class="bookings">
+            <% if @user_bookings.exists? %>
+              <% @user_bookings.each do |b| %>
+                <li class="booking">
+                  <div class="booking-name">
+                    <%= image_tag b.flat.user.photo.url, class: "avatar-review" %>
+                  </div>
+                  <div class="booking-name">
+                    <h5><%= @flats.find(b.flat_id).city%></h5>
+                    <div class="price">
+                      <%= @flats.find(b.flat_id).key_description %>
+                    </div>
+                  </div>
+                  <div class="booking-review">
+                    <%= link_to "Create review", new_booking_review_path(b.id), class: "button" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        <!-- booking ends -->
+        <!-- my flats start -->
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <ul class="bookings">
+            <% @user_flats.each do |f| %>
+            <li class="booking">
+              <div class="booking-name">
+               <h5>Sharing since</h5>
+               <%= f.created_at.strftime("%Y-%m-%d") %>
+             </div>
+             <div class="booking-name">
+              <%=f.key_description%>
+            </div>
+            <div class="booking-status">
+              <% if f.average_rating != nil %>
+              <div class="card-rating">
+                <% (f.average_rating).times do %>
+                <i class="fas fa-star" style="color: #ffb400"></i>
+                <% end %>
+                <% (5 - f.average_rating).times do %>
+                <i class="far fa-star" style="color: #ffb400"></i>
+                <% end %>
+              </div>
+            <% end %>
+            </div>
+            <div class="booking-review">
+              <%= link_to "Edit flat", edit_flat_path(f.id), class: "btn btn-secondary" %>
+            </div>
+          </li>
+          <% end %>
+        </ul>
+        <%= link_to "Create a flat", new_flat_path, class: "button" %>
       </div>
+      <!-- my flats ends -->
     </div>
   </div>
+</div>
+
 
 
 
