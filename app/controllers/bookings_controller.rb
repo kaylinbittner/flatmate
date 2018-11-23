@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(bookings_params)
+    @booking = Booking.new
     @booking.user = current_user
     @flat = Flat.find(params[:flat_id])
     @booking.flat = @flat
@@ -28,6 +28,7 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
+    # FIXME
     params.require(:booking).permit(:checkin, :checkout, :guests)
   end
 end
