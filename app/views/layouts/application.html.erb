@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Flatmate</title>
-    <%= favicon_link_tag asset_path('fmlogo.png'), :rel => 'icon', :type =>  'image/png' %>
+    <%= favicon_link_tag 'https://res.cloudinary.com/dqssam2go/image/upload/v1542972937/fmlogo.png', :rel => 'icon', :type =>  'image/png' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <!-- GOOGLE FONTS - RALEWAY -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,800" rel="stylesheet">
+
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- BOOTSTRAP -->
@@ -17,6 +20,7 @@
 
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <!-- ADD THIS LINE 👇 -->
+  <%= stylesheet_pack_tag "application" %>
   <%= stylesheet_pack_tag "map" %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>

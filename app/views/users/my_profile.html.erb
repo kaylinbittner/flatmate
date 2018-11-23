@@ -29,15 +29,17 @@
               <div class="booking-name">
                 <h5>First name</h5>
                 <div class="price"><%= @user.first_name%></div>
-                </div>
-                <div class="booking-name">
-                  <h5>Last name</h5>
+               </div>
+              <div class="booking-name">
+                <h5>Last name</h5>
                 <div class="price"><%= @user.last_name%></div>
-                </div>
-                <div class="booking-name">
-                  <h5>Email</h5>
-                <div class="price"><%= @user.email%></div>
               </div>
+              <div class="booking-name">
+                <h5>Email</h5>
+                <div class="price"><%= @user.email%></div>
+               </div>
+              <!-- profile ends -->
+              <!-- bookings start -->
               <div class="booking-review">
                 <%= link_to "Edit", edit_user_registration_path, class: "btn btn-secondary" %>
               </div>
@@ -48,21 +50,23 @@
         <!-- bookings start -->
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <ul class="bookings">
-            <% @user_bookings.each do |b| %>
-            <li class="booking">
-              <div class="booking-name">
-                <%= image_tag b.flat.user.photo.url, class: "avatar-review" %>
-              </div>
-              <div class="booking-name">
-                <h5><%= @flats.find(b.flat_id).city%></h5>
-                <div class="price">
-                  <%= @flats.find(b.flat_id).key_description %>
-                </div>
-              </div>
-              <div class="booking-review">
-                <%= link_to "Create review", new_booking_review_path(b.id), class: "button" %>
-              </div>
-            </li>
+            <% if @user_bookings.exists? %>
+              <% @user_bookings.each do |b| %>
+                <li class="booking">
+                  <div class="booking-name">
+                    <%= image_tag b.flat.user.photo.url, class: "avatar-review" %>
+                  </div>
+                  <div class="booking-name">
+                    <h5><%= @flats.find(b.flat_id).city%></h5>
+                    <div class="price">
+                      <%= @flats.find(b.flat_id).key_description %>
+                    </div>
+                  </div>
+                  <div class="booking-review">
+                    <%= link_to "Create review", new_booking_review_path(b.id), class: "button" %>
+                  </div>
+                </li>
+              <% end %>
             <% end %>
           </ul>
         </div>

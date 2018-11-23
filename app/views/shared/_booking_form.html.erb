@@ -1,26 +1,12 @@
-<% action = @flat.id.to_s + "/bookings" %>
-<form class= "book-form" action=<%= action %> method="post">
-
-  <h4 class="book-title">Book this flat</h3>
-
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="checkin" id="checkin" name="booking[:checkin]">
+  <div class="form-wrapper book-form">
+    <h2 class="book-title">Book this flat</h2>
+    <% action = @flat.id.to_s + "/bookings" %>
+    <div class="form-group"> <%= simple_form_for action, method: "post" do |f| %>
+      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Choose a Start Date", label: false %>
+      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "Choose an End Date", label: false %>
+      <%= f.input :guests, collection: [1, 2, 3, 4, 5] %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+      <%= link_to "Book it", my_profile_path, class: "book-button" %>
+    <% end %> </div>
   </div>
 
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="checkout" name="booking[:checkout]">
-  </div>
-
-  <div class="form-group">
-    <select name="booking[:guests]" id="guests" class="form-control">
-      <option value="1">1 guest</option>
-      <option value="2">2 guests</option>
-      <option value="3">3 guests</option>
-      <option value="3">4 guests</option>
-      <option value="3">5 guests</option>
-    </select>
-  </div>
-
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-  <%= submit_tag 'Book it', class: "book-button" %>
-</form>
